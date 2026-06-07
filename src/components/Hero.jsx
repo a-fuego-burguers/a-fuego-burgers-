@@ -7,10 +7,12 @@ export default function Hero() {
       {/* 👇 Fondo animado tipo humo */}
       <div className="absolute inset-0 animate-fog"></div>
 
-      {/* 👇 Contenido principal */}
-      <div className="bg-black/60 p-8 rounded-xl relative z-10">
-        <h1 className="text-5xl font-bold text-red-600 mb-4">A-FUEGO BURGERS</h1>
-        <p className="text-xl max-w-xl">
+      {/* 👇 Contenido principal SIN fondo */}
+      <div className="relative z-10 px-6">
+        <h1 className="text-5xl md:text-6xl font-extrabold text-red-600 mb-4 drop-shadow-lg">
+          A-FUEGO BURGERS
+        </h1>
+        <p className="text-lg md:text-xl max-w-xl mx-auto text-gray-200 drop-shadow-md">
           Hamburguesas artesanales al mejor estilo americano, hechas con carne 100% Angus 🔥
         </p>
         <a href="#menu">
