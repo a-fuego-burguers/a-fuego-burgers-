@@ -2,7 +2,7 @@
   "name": "A-Fuego Club",
   "short_name": "A-Fuego Club",
   "description": "Programa de fidelización de A-Fuego Burgers",
-  "start_url": "/a-fuego-burgers-/#/cliente/",
+  "start_url": "/a-fuego-burgers-/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#f97316",
