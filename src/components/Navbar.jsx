@@ -3,6 +3,22 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar({ cart }) {
   const [open, setOpen] = useState(false);
+  const scrollToSection = (id) => {
+
+  const section = document.getElementById(id);
+
+  if (section) {
+
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  }
+
+  setOpen(false);
+
+};
 
   return (
     <nav className="fixed top-0 w-full bg-black/90 text-white z-50">
@@ -21,10 +37,30 @@ export default function Navbar({ cart }) {
 
         {/* Menú visible solo en pantallas grandes */}
         <ul className="hidden sm:flex gap-6 text-lg">
-          <li><a href="#hero" className="hover:text-red-500">Inicio</a></li>
-          <li><a href="#menu" className="hover:text-red-500">Menú</a></li>
-          <li><a href="#about" className="hover:text-red-500">Nosotros</a></li>
-          <li><a href="#contact" className="hover:text-red-500">Contacto</a></li>
+          <li><button
+  onClick={() => scrollToSection("hero")}
+  className="hover:text-red-500"
+>
+  Inicio
+</button></li>
+          <li><button
+  onClick={() => scrollToSection("menu")}
+  className="hover:text-red-500"
+>
+  Menú
+</button></li>
+          <li><button
+  onClick={() => scrollToSection("about")}
+  className="hover:text-red-500"
+>
+  Nosotros
+</button></li>
+          <li><button
+  onClick={() => scrollToSection("contact")}
+  className="hover:text-red-500"
+>
+  Contacto
+</button></li>
           <li className="text-red-500 font-bold">
   🛒      ({cart.length})
         </li>
@@ -36,43 +72,39 @@ export default function Navbar({ cart }) {
   <ul className="flex flex-col bg-black/95 sm:hidden text-center pb-4">
     
     <li>
-      <a
-        href="#hero"
-        className="block py-2 hover:text-red-500"
-        onClick={() => setOpen(false)}
-      >
-        Inicio
-      </a>
+     <button
+  onClick={() => scrollToSection("hero")}
+  className="block py-2 hover:text-red-500 w-full"
+>
+  Inicio
+</button>
     </li>
 
     <li>
-      <a
-        href="#menu"
-        className="block py-2 hover:text-red-500"
-        onClick={() => setOpen(false)}
-      >
-        Menú
-      </a>
+      <button
+  onClick={() => scrollToSection("menu")}
+  className="block py-2 hover:text-red-500 w-full"
+>
+  Menú
+</button>
     </li>
 
     <li>
-      <a
-        href="#about"
-        className="block py-2 hover:text-red-500"
-        onClick={() => setOpen(false)}
-      >
-        Nosotros
-      </a>
+     <button
+  onClick={() => scrollToSection("about")}
+  className="block py-2 hover:text-red-500 w-full"
+>
+  Nosotros
+</button>
     </li>
 
     <li>
-      <a
-        href="#contact"
-        className="block py-2 hover:text-red-500"
-        onClick={() => setOpen(false)}
-      >
-        Contacto
-      </a>
+     <button
+  onClick={() => scrollToSection("contact")}
+  className="block py-2 hover:text-red-500 w-full"
+>
+  Contacto
+</button>
     </li>
 
     <li className="text-red-500 font-bold py-2">

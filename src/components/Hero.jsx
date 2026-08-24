@@ -15,11 +15,16 @@ export default function Hero() {
         <p className="text-lg md:text-xl max-w-xl mx-auto text-gray-200 drop-shadow-md">
           Hamburguesas artesanales al mejor estilo americano, hechas con carne 100% Angus 🔥
         </p>
-        <a href="#menu">
-          <button className="mt-6 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-white font-semibold">
-            Ver Menú
-          </button>
-        </a>
+        <button
+  onClick={() => {
+    document.getElementById("menu")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  }}
+  className="mt-6 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-white font-semibold"
+>
+  Ver Menú
+</button>
       </div>
     </section>
   );

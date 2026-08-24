@@ -19,7 +19,7 @@ export default function Contact() {
           Instagram
         </a>
         <a
-          href="https://www.facebook.com/"
+          href="https://www.facebook.com/profile.php?id=61589262105389"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-red-500 transition-colors"

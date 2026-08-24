@@ -61,7 +61,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           element={<App />}
         />
         <Route
-          path="/cliente/:token"
+          path="/cliente/:token?"
           element={<Cliente />}
         />
       <Route
@@ -82,3 +82,19 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
   </React.StrictMode>
 );
+if (
+  "serviceWorker" in navigator
+) {
+
+  window.addEventListener(
+    "load",
+    () => {
+
+      navigator.serviceWorker.register(
+        "/a-fuego-burgers-/sw.js"
+      );
+
+    }
+  );
+
+}

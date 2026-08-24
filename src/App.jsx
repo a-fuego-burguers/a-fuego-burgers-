@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -9,10 +10,37 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import Reviews from "./components/Reviews";
 import AddReview from "./components/AddReview";
 import Cart from "./components/Cart";
+import { obtenerToken } from "./db";
 
 function App() {
 
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
+
+useEffect(() => {
+
+  async function cargar() {
+
+    const tokenGuardado =
+      await obtenerToken();
+      console.log(
+  "TOKEN LEIDO:",
+  tokenGuardado
+);
+
+    if (tokenGuardado) {
+
+      navigate(
+        `/cliente/${tokenGuardado}`
+      );
+
+    }
+
+  }
+
+  cargar();
+
+}, []);
 
   return (
 
